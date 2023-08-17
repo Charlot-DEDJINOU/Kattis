@@ -1,0 +1,1 @@
+print(hex(int(int(input() , 8)))[2:].upper())
