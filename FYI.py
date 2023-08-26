@@ -1,0 +1,2 @@
+res = 1 if input()[:3] == "555" else 0
+print(res)
