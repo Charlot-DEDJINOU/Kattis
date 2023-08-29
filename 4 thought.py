@@ -1,4 +1,4 @@
-from itertools import product, permutations
+from itertools import product
 
 def calculator(a , b ,signe) :
     if signe == "*" :
