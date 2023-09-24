@@ -10,10 +10,10 @@ def reverse(matrix):
 def merge_left(matrix):
     def merge_and_shift_left(row):
         current_index = 0
-        while current_index < len(row) and row[current_index] == 0:
+        while current_index < len(row) and row[current_index] == 0 :
             current_index += 1
         next_index = current_index + 1
-        while next_index < len(row) and row[next_index] == 0:
+        while next_index < len(row) and row[next_index] == 0 :
             next_index += 1
         
         if next_index == len(row):
