@@ -9,15 +9,15 @@ def main():
         if num != min_value and num != max_value:
             in_value = num
 
-    if mot == "ABC":
+    if mot == "ABC" :
         print(min_value, in_value, max_value)
-    elif mot == "BAC":
+    elif mot == "BAC" :
         print(in_value, min_value, max_value)
-    elif mot == "ACB":
+    elif mot == "ACB" :
         print(min_value, max_value, in_value)
-    elif mot == "BCA":
+    elif mot == "BCA" :
         print(in_value, max_value, min_value)
-    elif mot == "CAB":
+    elif mot == "CAB" :
         print(max_value, min_value, in_value)
     else:
         print(max_value, in_value, min_value)
