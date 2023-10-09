@@ -4,5 +4,5 @@ s = list(map(int , input().split()))
 if k == 1 :
     print(*s)
 else :
-    for i in range(k - 1 , n , k) :
-        print(s[i],end=' ')
+    for j in range(k - 1 , n , k) :
+        print(s[j],end=' ')
