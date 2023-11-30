@@ -9,7 +9,6 @@ help_msg = usage_msg + "\n" +\
         "'$ python "+ sys.argv[0] +" -d pole.txt'\n"
 
 
-
 if len(sys.argv) < 2 or len(sys.argv) > 4:
     print(usage_msg)
     sys.exit(1)
@@ -49,7 +48,6 @@ elif sys.argv[1] == "-d":
 elif sys.argv[1] == "-h" or sys.argv[1] == "--help":
     print(help_msg)
     sys.exit(1)
-
 
 else:
     print("Unrecognized first argument: "+ sys.argv[1])
