@@ -5,7 +5,7 @@ alphabet_majuscules.append(".")
 def ROT(message, cle) :
     shiffer = ""
     for letter in message :
-        shiffer += alphabet_majuscules[(alphabet_majuscules.index(letter) + cle) % 28]
+        shiffer += alphabet_majuscules[(alphabet_majuscules.index(letter) + cle) % len(alphabet_majuscules)]
     
     return shiffer
 
