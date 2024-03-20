@@ -59,8 +59,24 @@ def decrypte(key) :
 
     write_file('deshiffer1.txt', chr(10).join(content))
 
+def textEncryption(key) : 
 
-crypte(5)
-shiffer(9)
-deshiffer(9)
-decrypte(5)
+    s = 0
+
+    if len(s) > key :
+        nextLetter = 0
+        nextPlace = 0
+        count = 0
+        
+        res = [""] * len(s)
+        if len(s) > key:
+                while count < key:
+                    res[nextPlace] = s[nextLetter].upper()
+                    nextLetter += 1
+                    nextPlace += key
+                    if nextPlace >= len(s) or nextLetter >= len(s):
+                            count += 1
+                            nextPlace = count
+        print(''.join(res))
+    else :
+        print(s.upper())
