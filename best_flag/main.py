@@ -1,3 +1,5 @@
+import math
+
 def read_file(filename):
     try:
         with open(filename, 'r') as file:
@@ -59,9 +61,7 @@ def decrypte(key) :
 
     write_file('deshiffer1.txt', chr(10).join(content))
 
-def textEncryption(key) : 
-
-    s = 0
+def textEncryption(key, s) : 
 
     if len(s) > key :
         nextLetter = 0
@@ -77,6 +77,29 @@ def textEncryption(key) :
                     if nextPlace >= len(s) or nextLetter >= len(s):
                             count += 1
                             nextPlace = count
-        print(''.join(res))
+        return ''.join(res)
     else :
-        print(s.upper())
+        return s.upper()
+
+def textDecryption(key, ciphertext):
+    if len(ciphertext) > key:
+        columns = len(ciphertext) // key
+        rows = math.ceil(len(ciphertext) / key)
+        empty_cells = (rows * columns) - len(ciphertext)
+        plaintext = [''] * rows
+        current_row, current_col = 0, 0
+        for char in ciphertext:
+            plaintext[current_row] += char
+            current_col += 1
+            if (current_row == rows - 1) or (current_col == columns and current_row >= rows - empty_cells):
+                current_col = 0
+                current_row += 1
+        return ''.join(plaintext)
+    else:
+        return ciphertext.upper()
+
+# Example usage
+key = 4
+text = "Nerys"
+decrypted_text = textDecryption(key, textEncryption(key, text))
+print(decrypted_text)
