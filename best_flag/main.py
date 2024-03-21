@@ -101,5 +101,6 @@ def textDecryption(key, ciphertext):
 # Example usage
 key = 4
 text = "Nerys"
-decrypted_text = textDecryption(key, textEncryption(key, text))
-print(decrypted_text)
+text_encrypted = textEncryption(key, text)
+decrypted_text = textDecryption(key, text_encrypted)
+print(text_encrypted,decrypted_text)
