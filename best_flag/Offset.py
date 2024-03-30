@@ -1,4 +1,3 @@
-
 from FileManeger import read, write
 
 def crypte(input_file, output_file, key):
