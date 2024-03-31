@@ -1,3 +1,7 @@
 import Offset
+import ASCII
+import Substitution
+import ROTN
 
-Offset.decrypte('crypte.txt', 'decrypte.txt', 3)
+
+ROTN.decrypte('example.txt', 'example.txt', 13, 'azertyuiopqsdfghjklmwxcvbn')
