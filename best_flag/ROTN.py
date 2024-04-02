@@ -1,6 +1,7 @@
+import unicodedata
 from FileManeger import write, read
 
-def crypte(input_file, output_file, key, alphabet) : 
+def crypt(input_file, output_file, key, alphabet) : 
     messages = read(input_file).split(chr(10))
     content = list()
 
@@ -10,7 +11,7 @@ def crypte(input_file, output_file, key, alphabet) :
     write(output_file, chr(10).join(content))
 
 
-def decrypte(input_file, output_file, key, alphabet) :
+def decrypt(input_file, output_file, key, alphabet) :
     messages = read(input_file).split(chr(10))
     content = list()
 
@@ -21,7 +22,8 @@ def decrypte(input_file, output_file, key, alphabet) :
 
 def crypting(text, alphabet, key):
     encrypted_text = ''
-    for char in text:
+    normalized_text = normalize_text(text)
+    for char in normalized_text:
         if char.isalpha():
             if char.islower():
                 encrypted_text += alphabet[(alphabet.index(char) + key) % len(alphabet)]
@@ -33,7 +35,8 @@ def crypting(text, alphabet, key):
 
 def decrypting(text, alphabet, key):
     decrypted_text = ''
-    for char in text:
+    normalized_text = normalize_text(text)
+    for char in normalized_text:
         if char.isalpha():
             if char.islower():
                 decrypted_text += alphabet[(alphabet.index(char) - key) % len(alphabet)]
@@ -42,3 +45,7 @@ def decrypting(text, alphabet, key):
         else:
             decrypted_text += char
     return decrypted_text
+
+def normalize_text(text):
+    normalized_text = unicodedata.normalize('NFD', text)
+    return normalized_text
