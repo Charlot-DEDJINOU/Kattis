@@ -1,6 +1,6 @@
 from FileManeger import read, write
 
-def crypte(input_file, output_file, key) :
+def crypt(input_file, output_file, key) :
     messages = read(input_file).split(chr(10))
     content = list()
     for message in messages :
@@ -14,7 +14,7 @@ def crypte(input_file, output_file, key) :
     write(output_file, ''.join(content))
 
 
-def decrypte(input_file, output_file, key) :
+def decrypt(input_file, output_file, key) :
     messages = read(input_file).split(chr(10))
     content = list()
     for message in messages :
