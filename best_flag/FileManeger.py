@@ -1,6 +1,6 @@
 def read(filename):
     try:
-        with open(filename, 'r') as file:
+        with open(filename, 'r', encoding='utf-8') as file:
             content = file.read()
         return content
     except FileNotFoundError:
@@ -9,11 +9,14 @@ def read(filename):
     except Exception as e:
         print(f"Error: {e}")
         return None
+    finally:
+        file.close()
 
 def write(filename, content):
     try:
-        with open(filename, 'w') as file:
+        with open(filename, 'w', encoding='utf-8') as file:
             file.write(content)
-
     except Exception as e:
         print(f"Error: {e}")
+    finally:
+        file.close()
