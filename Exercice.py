@@ -11,6 +11,7 @@ n, m = map(int, input().split())
 s = input()
 cipher = input()
 key = (alphabets.index(cipher[-1]) - alphabets.index(s[-1])) % 26
+
 print(key)
 
 print(decrypt(cipher, key))
